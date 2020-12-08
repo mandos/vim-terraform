@@ -22,9 +22,15 @@ if !has('patch-7.4.1142')
 endif
 
 if get(g:, 'terraform_fold_sections', 0)
-  setlocal foldmethod=syntax
-  let b:undo_ftplugin .= ' foldmethod<'
+  if get(g:, 'terraform_tree_sitter', 0)
+    setlocal foldmethod=syntax
+    let b:undo_ftplugin .= ' foldmethod<'
+  else
+    setlocal foldmethod=expr
+    setlocal foldexpr=nvim_treesitter#foldexpr()
+  endif
 endif
+
 
 " Set the commentstring
 setlocal commentstring=#%s
@@ -62,6 +68,7 @@ if get(g:, 'terraform_fmt_on_save', 0)
     autocmd BufWritePre *.tfvars call terraform#fmt()
   augroup END
 endif
+
 
 let &cpoptions = s:cpo_save
 unlet s:cpo_save

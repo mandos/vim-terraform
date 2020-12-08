@@ -38,4 +38,10 @@ SETTINGS                                                 *terraform-settings*
     terraform code.
     Default: 0
 
+                                             *'g:terraform_syntax_higlights'*
+`g:terraform_tree_sitter`
+           Turn on support of highlight and folding supported by nvim-tree-sitter.
+
+           Default: 0
+
  vim:tw=78:et:ft=help:norl:

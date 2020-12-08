@@ -48,6 +48,11 @@ You can also do this manually with the `:TerraformFmt` command.
 Allow vim-terraform to use a custom path for the terraform binary. Defaults to terraform (found in $PATH)
 
     let g:terraform_binary_path="/usr/local/Cellar/terraform/0.13.5/bin/terraform"
+    
+Allow vim-terraform to nvim-tree-sitter plugin to show syntax higlights and use folds based on tree-sitter nodes.
+To use this feature you have to use NeoVim and install nvim-tree-sitter plugin with tree-sitter-terraform
+
+    let g:terraform_tree_sitter=1
 
 - - - -
 ## Updating vim-terraform

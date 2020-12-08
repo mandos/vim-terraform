@@ -1,7 +1,7 @@
 " Forked from Larry Gilbert's syntax file
 " github.com/L2G/vim-syntax-terraform
 
-if exists('b:current_syntax')
+if exists('b:current_syntax') || (get(g:, 'terraform_tree_sitter', 0))
   finish
 endif
 

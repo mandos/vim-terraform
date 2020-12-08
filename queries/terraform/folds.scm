@@ -1,0 +1,3 @@
+[
+  (local_declarations)
+] @fold
